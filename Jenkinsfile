@@ -4,7 +4,7 @@ pipeline {
         PROJECT_ID = 'My First Project'
         CLUSTER_NAME = 'ngu-K8-cluster'
         LOCATION = 'us-central1-c'
-        CREDENTIALS_ID = 'kubernetes'
+        CREDENTIALS_ID = 'K8'
     }
     stages {
         stage("Checkout code") {
