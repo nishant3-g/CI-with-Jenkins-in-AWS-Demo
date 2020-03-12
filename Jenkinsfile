@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PROJECT_ID = 'My First Project'
+        PROJECT_ID = 'numeric-poetry-270205'
         CLUSTER_NAME = 'ngu-k8-cluster'
         LOCATION = 'us-central1-c'
         CREDENTIALS_ID = 'K8'
