@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        PROJECT_ID = 'devops-rg'
-        CLUSTER_NAME = 'kubernetes-cluster'
-        LOCATION = 'us-central1-a'
+        PROJECT_ID = 'My First Project'
+        CLUSTER_NAME = 'ngu-K8-cluster'
+        LOCATION = 'us-central1-c'
         CREDENTIALS_ID = 'kubernetes'
     }
     stages {
@@ -27,14 +27,14 @@ pipeline {
         stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("rahulgarg15/k8s:${env.BUILD_ID}")
+                    myapp = docker.build("nishant3g/k8s:${env.BUILD_ID}")
                 }
             }
         }
         stage("Push image") {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'Docker-hub-credentials') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'Docker-hub-Cred') {
                             myapp.push("${env.BUILD_ID}")
                     }
                 }
